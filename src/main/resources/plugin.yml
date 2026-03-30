@@ -1,0 +1,5 @@
+name: Treas-Watchdog
+main: me.noramibu.watchdog.TreasWatchdogPlugin
+version: 1.0.0
+author: noramibu
+description: Alerts operators when suspicious plugin artifacts are present in plugin jars.

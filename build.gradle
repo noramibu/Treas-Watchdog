@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.noramibu.watchdog'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://repo.md-5.net/content/repositories/snapshots/'
+    }
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    // Older API baseline helps keep runtime compatibility across 1.8 -> 1.21.
+    compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 8
+}
